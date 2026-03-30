@@ -16,7 +16,7 @@ root.title("Task Timer")
 root.attributes("-topmost", True)
 
 # small fixed size
-root.geometry("200x80")
+root.geometry("400x80")
 
 def on_click(event):
     global offset_x, offset_y
