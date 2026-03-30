@@ -8,7 +8,7 @@ folder_path = os.path.dirname(os.path.abspath(__file__))
 
 root = tk.Tk()
 root.title("Launcher")
-root.geometry("200x100")
+root.geometry("400x150")
 
 def open_notes():
     notes_path = os.path.join(folder_path, "notes.py")
