@@ -7,7 +7,7 @@ folder_path = os.path.dirname(os.path.abspath(__file__))
 
 root = tk.Tk()
 root.title("Launcher")
-root.geometry("250x150")
+root.geometry("400x150")
 
 # Function for opening the Productivity Launcher
 def openProductivity():
