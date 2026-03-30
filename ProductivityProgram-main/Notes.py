@@ -11,7 +11,7 @@ root = tk.Tk()
 root.title("Quick Notes")
 
 # Small fixed size
-root.geometry("300x200")
+root.geometry("400x200")
 # Make the window always stay on top
 root.attributes("-topmost", True)
 
