@@ -5,10 +5,13 @@ import os
 
 # Folder where the launcher script is located
 folder_path = os.path.dirname(os.path.abspath(__file__))
+# Path to the main icon.
+icon_path = os.path.join(folder_path, "Icons", "PP.ico")
 
 root = tk.Tk()
 root.title("Launcher")
 root.geometry("400x150")
+root.iconbitmap(icon_path)
 
 def open_notes():
     notes_path = os.path.join(folder_path, "notes.py")
