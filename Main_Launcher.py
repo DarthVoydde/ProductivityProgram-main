@@ -4,10 +4,12 @@ import sys
 import os
 
 folder_path = os.path.dirname(os.path.abspath(__file__))
+icon_path = os.path.join(folder_path, "Icons", "PP.ico")
 
 root = tk.Tk()
 root.title("Launcher")
 root.geometry("400x150")
+root.iconbitmap(icon_path)
 
 # Function for opening the Productivity Launcher
 def openProductivity():
