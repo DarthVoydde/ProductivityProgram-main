@@ -3,12 +3,15 @@ from tkinter import filedialog, messagebox
 import os
 
 ### Global Variables ###
+folder_path = os.path.dirname(os.path.abspath(__file__))
+icon_path = os.path.join(folder_path, "Icons", "PP.ico")
 
 # This variable will store the file location for the currently opened note.
 current_file = None
 
 root = tk.Tk()
 root.title("Quick Notes")
+root.iconbitmap(icon_path)
 
 # Small fixed size
 root.geometry("400x200")
