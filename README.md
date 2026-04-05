@@ -21,5 +21,7 @@ Features in the current version:
 
   This project will be expanded overtime.
 
-  Coming up: The launcher should be able to be minimized to the arrow menu on the taskbar.
+  Coming up:
+  - The launcher should be able to be minimized to the arrow menu on the taskbar.
+  - The notes window should support text-to-speech so that your notes can be read aloud to you.
   
