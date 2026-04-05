@@ -1,16 +1,24 @@
 import tkinter as tk
 import time
+import os
+
+# Global Variables
+folder_path = os.path.dirname(os.path.abspath(__file__))
+icon_path = os.path.join(folder_path, "Icons", "PP.ico")
 
 # Variable to keep track of elapsed seconds
 elapsed_seconds = 0
+
 # Keep track of the scheduled "after" call
 timer_job = None
+
 # Variables to store mouse position
 offset_x = 0
 offset_y = 0
 
 root = tk.Tk()
 root.title("Task Timer")
+root.iconbitmap(icon_path)
 
 # keep window above others
 root.attributes("-topmost", True)
