@@ -20,6 +20,10 @@ def quit_window():
     icon.stop()
     root.quit()
 
+def show_window():
+    icon.stop()
+    root.after(0, root.deiconfiy)
+
 def open_notes():
     notes_path = os.path.join(folder_path, "notes.py")
     subprocess.Popen([sys.executable, notes_path])
