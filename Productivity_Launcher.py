@@ -2,6 +2,9 @@ import tkinter as tk
 import subprocess
 import sys
 import os
+import threading
+import pystray
+from PIL import Image
 
 # Folder where the launcher script is located
 folder_path = os.path.dirname(os.path.abspath(__file__))
@@ -12,6 +15,10 @@ root = tk.Tk()
 root.title("Launcher")
 root.geometry("400x150")
 root.iconbitmap(icon_path)
+
+def quit_window():
+    icon.stop()
+    root.quit()
 
 def open_notes():
     notes_path = os.path.join(folder_path, "notes.py")
