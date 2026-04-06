@@ -16,13 +16,13 @@ root.title("Launcher")
 root.geometry("400x150")
 root.iconbitmap(icon_path)
 
-def quit_window():
+def quit_window(icon, item=None):
     icon.stop()
     root.quit()
 
-def show_window():
+def show_window(icon, item=None):
     icon.stop()
-    root.after(0, root.deiconfiy)
+    root.after(0, lambda: (root.deiconify, root.state('normal')))
 
 def hide_to_tray():
     root.withdraw()
@@ -37,6 +37,13 @@ def hide_to_tray():
     icon = pystray.Icon("Productivity Launcher", img, "Productivity Launcher", menu)
 
     threading.Thread(target=icon.run, daemon=True).start()
+
+def on_minimize(event):
+    # Only hide if the window is actually being minimized AND the event is for the main window
+    if event.widget == root and root.state() == 'iconic':
+        hide_to_tray()
+
+root.bind("<Unmap>", on_minimize)
 
 def open_notes():
     notes_path = os.path.join(folder_path, "notes.py")
