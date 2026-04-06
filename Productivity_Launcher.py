@@ -24,6 +24,20 @@ def show_window():
     icon.stop()
     root.after(0, root.deiconfiy)
 
+def hide_to_tray():
+    root.withdraw()
+
+    img = Image.open(icon_path)
+
+    menu = (
+        pystray.MenuItem('Show Launcher', show_window),
+        pystray.MenuItem('Quit Launcher', quit_window)
+    )
+
+    icon = pystray.Icon("Productivity Launcher", img, "Productivity Launcher", menu)
+
+    threading.Thread(target=icon.run, daemon=True).start()
+
 def open_notes():
     notes_path = os.path.join(folder_path, "notes.py")
     subprocess.Popen([sys.executable, notes_path])
