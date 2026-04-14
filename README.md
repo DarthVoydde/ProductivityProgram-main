@@ -19,9 +19,10 @@ Features in the current version:
 - Timer - This is a simple timer that you can use when you want to time tasks. I use this to measure the time I've been working on my many
   projects. It offers a start, stop, and reset feature.
 
+- System Tray - If the productivity launcher is closed, the notes and timer windows will also close. To prevent this, minimize the launcher so that it doesn't close. It will go to your system tray where you have the option to re-open or close the launcher.
+
   This project will be expanded overtime.
 
   Coming up:
-  - The launcher should be able to be minimized to the arrow menu on the taskbar.
   - The notes window should support text-to-speech so that your notes can be read aloud to you.
   
