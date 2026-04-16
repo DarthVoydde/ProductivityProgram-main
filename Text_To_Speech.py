@@ -1,17 +1,29 @@
 # Imports
+import queue
 import pyttsx3
+import threading
 
 # initialize the engine
 engine = pyttsx3.init()
+speech_queue = queue.Queue()
 
+def speech_worker():
+    while True:
+        text = speech_queue.get()
+        if text is None:  # Sentinel value to stop the thread
+            break
+
+        engine.say(text)
+        engine.runAndWait()
+
+threading.Thread(target=speech_worker, daemon=True).start()
 # define the read function take the text as a parameter
-def read(text):
-    # check if the user is online
-    engine.say(text)
-    engine.runAndWait()
+def _read(text):
+    speech_queue.put(text)
+    
 
-read("Hello, this is a text to speech test.")
-# if the user isn't online
-# convert the text to text to speech using pyttsx3
-# if the user is online
-# convert the text to tts using a better module
+#Test, remove when done    
+text = ("Hello, balls")
+
+_read(text)
+input("Press enter to exit")
