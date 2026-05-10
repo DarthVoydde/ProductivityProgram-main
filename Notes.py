@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
+import Text_To_Speech
 
 ### Global Variables ###
 folder_path = os.path.dirname(os.path.abspath(__file__))
@@ -87,6 +88,14 @@ def open_file():
 
         except Exception as e:
              messagebox.showerror("Error", f"Could not open file:\n{str(e)}")
+
+def tts():
+     try:
+          selected_text = text_area.get(tk.SEL_FIRST, tk.SEL_LAST)
+          # Placeholder
+          Text_To_Speech._read(selected_text)
+     except tk.TclError:
+          messagebox.showwarning("TTS", "No text Selected.")
         
 
 # Create a context menu
@@ -99,6 +108,8 @@ context_menu.add_command(label="Paste", command=lambda: text_area.event_generate
 context_menu.add_separator()
 context_menu.add_command(label="Save", command=save_file)
 context_menu.add_command(label="Save As...", command = save_as_file)
+# TTS
+context_menu.add_command(label="TTS", command = tts)
 
 # Function to show the menu on right-click
 def show_context_menu(event):

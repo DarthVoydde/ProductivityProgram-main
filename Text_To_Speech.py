@@ -1,29 +1,14 @@
 # Imports
-import queue
 import pyttsx3
 import threading
 
-# initialize the engine
-engine = pyttsx3.init()
-speech_queue = queue.Queue()
+def speak(text):
+    engine = pyttsx3.init()
+    # Adjust the speed of the TTS voice. 
+    engine.setProperty('rate', 125)
+    engine.say(text)
+    engine.runAndWait()
+    engine.stop()
 
-def speech_worker():
-    while True:
-        text = speech_queue.get()
-        if text is None:  # Sentinel value to stop the thread
-            break
-
-        engine.say(text)
-        engine.runAndWait()
-
-threading.Thread(target=speech_worker, daemon=True).start()
-# define the read function take the text as a parameter
 def _read(text):
-    speech_queue.put(text)
-    
-
-#Test, remove when done    
-text = ("Hello, balls")
-
-_read(text)
-input("Press enter to exit")
+    threading.Thread(target=speak, args=(text,), daemon=True).start()
