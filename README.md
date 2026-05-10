@@ -14,7 +14,7 @@ Features in the current version:
 - Notes - This is a stickypad style notes system that can stay always on top of windows that are set to windowed mode. You can type your
   notes in this window that is resizeable and dynamically adjusts the line size to the size of the window. You can copy and paste text to
   and from the note window. You can save your notes as .txt files or load .txt files into an empty note by using the right-click dropdown
-  menu.
+  menu. Notes now offers TTS. Simply highlight any text in the note window, right click to view the context menu and select TTS. The selected text will then be read aloud to you.
   
 - Timer - This is a simple timer that you can use when you want to time tasks. I use this to measure the time I've been working on my many
   projects. It offers a start, stop, and reset feature.
@@ -24,5 +24,6 @@ Features in the current version:
   This project will be expanded overtime.
 
   Coming up:
-  - The notes window should support text-to-speech so that your notes can be read aloud to you.
+  TTS Settings
+  
   
